@@ -36,7 +36,7 @@ TEST_CASE( "FixedBlockMemoryManager allocate test" )
 
 	REQUIRE_FALSE( MemMgrTester::m_mgr.Empty() );
 	REQUIRE( MemMgrTester::m_mgr.BlockSize( ) == sizeof( MemMgrTester ) );
-	REQUIRE( MemMgrTester::m_mgr.Capacity( ) == sizeof( MemMgrTester::m_storage ) / sizeof( MemMgrTester ) );
+	REQUIRE( MemMgrTester::m_mgr.Capacity( ) == sizeof( MemMgrTester::m_storage ) / sizeof( void* ) );
 
 	delete p;
 }
